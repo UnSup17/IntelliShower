@@ -5717,33 +5717,30 @@ unsigned char keyfind()
     TRISB = 0xf0;
     unsigned char temp1;
 
-        LATB = 0xf0;
-      do
-      {
+    LATB = 0xf0;
+    do {
+        do {
+
+            col_loc = PORTB & 0xf0;
+
+        } while (col_loc != 0xf0);
+        col_loc = PORTB & 0xf0;
+    } while (col_loc != 0xf0);
+
+    _delay((unsigned long)((50)*(8000000/4000.0)));
+    LATB = 0xf0;
+    do {
         do
         {
 
             col_loc = PORTB & 0xf0;
-
-        }while(col_loc!=0xf0);
-         col_loc = PORTB & 0xf0;
-      }while(col_loc!=0xf0);
-
-      _delay((unsigned long)((50)*(8000000/4000.0)));
-        LATB = 0xf0;
-        do
-        { do
-
-            {
-
-                col_loc = PORTB & 0xf0;
-            }while(col_loc==0xf0);
-         col_loc = PORTB & 0xf0;
-        }while(col_loc==0xf0);
-
-        _delay((unsigned long)((20)*(8000000/4000.0)));
-
+        } while (col_loc == 0xf0);
         col_loc = PORTB & 0xf0;
+    } while (col_loc == 0xf0);
+
+    _delay((unsigned long)((20)*(8000000/4000.0)));
+
+    col_loc = PORTB & 0xf0;
 
 
 

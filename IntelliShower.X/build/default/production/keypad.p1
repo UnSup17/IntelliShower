@@ -646,338 +646,334 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;keypad.c: 7:     unsigned char temp1;
 [v _temp1 `uc ~T0 @X0 1 a ]
 "9
-[; ;keypad.c: 9:         LATB = 0xf0;
+[; ;keypad.c: 9:     LATB = 0xf0;
 [e = _LATB -> -> 240 `i `uc ]
 "10
-[; ;keypad.c: 10:       do
+[; ;keypad.c: 10:     do {
 [e :U 370 ]
+{
 "11
-[; ;keypad.c: 11:       {
-{
-"12
-[; ;keypad.c: 12:         do
+[; ;keypad.c: 11:         do {
 [e :U 373 ]
-"13
-[; ;keypad.c: 13:         {
 {
-"15
-[; ;keypad.c: 15:             col_loc = PORTB & 0xf0;
+"13
+[; ;keypad.c: 13:             col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"17
-[; ;keypad.c: 17:         }while(col_loc!=0xf0);
+"15
+[; ;keypad.c: 15:         } while (col_loc != 0xf0);
 }
 [e $ != -> _col_loc `i -> 240 `i 373  ]
 [e :U 372 ]
-"18
-[; ;keypad.c: 18:          col_loc = PORTB & 0xf0;
+"16
+[; ;keypad.c: 16:         col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"19
-[; ;keypad.c: 19:       }while(col_loc!=0xf0);
+"17
+[; ;keypad.c: 17:     } while (col_loc != 0xf0);
 }
 [e $ != -> _col_loc `i -> 240 `i 370  ]
 [e :U 369 ]
-"21
-[; ;keypad.c: 21:       _delay((unsigned long)((50)*(8000000/4000.0)));
+"19
+[; ;keypad.c: 19:     _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"22
-[; ;keypad.c: 22:         LATB = 0xf0;
+"20
+[; ;keypad.c: 20:     LATB = 0xf0;
 [e = _LATB -> -> 240 `i `uc ]
-"23
-[; ;keypad.c: 23:         do
+"21
+[; ;keypad.c: 21:     do {
 [e :U 376 ]
-"24
-[; ;keypad.c: 24:         { do
 {
+"22
+[; ;keypad.c: 22:         do
 [e :U 379 ]
-"26
-[; ;keypad.c: 26:             {
+"23
+[; ;keypad.c: 23:         {
 {
-"28
-[; ;keypad.c: 28:                 col_loc = PORTB & 0xf0;
+"25
+[; ;keypad.c: 25:             col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"29
-[; ;keypad.c: 29:             }while(col_loc==0xf0);
+"26
+[; ;keypad.c: 26:         } while (col_loc == 0xf0);
 }
 [e $ == -> _col_loc `i -> 240 `i 379  ]
 [e :U 378 ]
-"30
-[; ;keypad.c: 30:          col_loc = PORTB & 0xf0;
+"27
+[; ;keypad.c: 27:         col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"31
-[; ;keypad.c: 31:         }while(col_loc==0xf0);
+"28
+[; ;keypad.c: 28:     } while (col_loc == 0xf0);
 }
 [e $ == -> _col_loc `i -> 240 `i 376  ]
 [e :U 375 ]
-"33
-[; ;keypad.c: 33:         _delay((unsigned long)((20)*(8000000/4000.0)));
+"30
+[; ;keypad.c: 30:     _delay((unsigned long)((20)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"35
-[; ;keypad.c: 35:         col_loc = PORTB & 0xf0;
+"32
+[; ;keypad.c: 32:     col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"39
-[; ;keypad.c: 39:     while(1)
+"36
+[; ;keypad.c: 36:     while(1)
 [e :U 381 ]
-"40
-[; ;keypad.c: 40:     {
+"37
+[; ;keypad.c: 37:     {
 {
-"41
-[; ;keypad.c: 41:         LATB = 0xfe;
+"38
+[; ;keypad.c: 38:         LATB = 0xfe;
 [e = _LATB -> -> 254 `i `uc ]
-"42
-[; ;keypad.c: 42:         col_loc = PORTB & 0xf0;
+"39
+[; ;keypad.c: 39:         col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"43
-[; ;keypad.c: 43:         temp_col=col_loc;
+"40
+[; ;keypad.c: 40:         temp_col=col_loc;
 [e = _temp_col _col_loc ]
-"44
-[; ;keypad.c: 44:         if(col_loc!=0xf0)
+"41
+[; ;keypad.c: 41:         if(col_loc!=0xf0)
 [e $ ! != -> _col_loc `i -> 240 `i 383  ]
-"45
-[; ;keypad.c: 45:         {
+"42
+[; ;keypad.c: 42:         {
 {
-"46
-[; ;keypad.c: 46:             rowloc=0;
+"43
+[; ;keypad.c: 43:             rowloc=0;
 [e = _rowloc -> -> 0 `i `uc ]
-"47
-[; ;keypad.c: 47:             while(temp_col!=0xf0)
+"44
+[; ;keypad.c: 44:             while(temp_col!=0xf0)
 [e $U 384  ]
 [e :U 385 ]
-"48
-[; ;keypad.c: 48:             {
+"45
+[; ;keypad.c: 45:             {
 {
-"49
-[; ;keypad.c: 49:                 temp_col = PORTB & 0xf0;
+"46
+[; ;keypad.c: 46:                 temp_col = PORTB & 0xf0;
 [e = _temp_col -> & -> _PORTB `i -> 240 `i `uc ]
-"50
-[; ;keypad.c: 50:             }
+"47
+[; ;keypad.c: 47:             }
 }
 [e :U 384 ]
-"47
-[; ;keypad.c: 47:             while(temp_col!=0xf0)
+"44
+[; ;keypad.c: 44:             while(temp_col!=0xf0)
 [e $ != -> _temp_col `i -> 240 `i 385  ]
 [e :U 386 ]
-"51
-[; ;keypad.c: 51:             break;
+"48
+[; ;keypad.c: 48:             break;
 [e $U 382  ]
-"52
-[; ;keypad.c: 52:         }
+"49
+[; ;keypad.c: 49:         }
 }
 [e :U 383 ]
-"54
-[; ;keypad.c: 54:         LATB = 0xfd;
+"51
+[; ;keypad.c: 51:         LATB = 0xfd;
 [e = _LATB -> -> 253 `i `uc ]
-"55
-[; ;keypad.c: 55:         col_loc = PORTB & 0xf0;
+"52
+[; ;keypad.c: 52:         col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"56
-[; ;keypad.c: 56:         temp_col=col_loc;
+"53
+[; ;keypad.c: 53:         temp_col=col_loc;
 [e = _temp_col _col_loc ]
-"57
-[; ;keypad.c: 57:         if(col_loc!=0xf0)
+"54
+[; ;keypad.c: 54:         if(col_loc!=0xf0)
 [e $ ! != -> _col_loc `i -> 240 `i 387  ]
-"58
-[; ;keypad.c: 58:         {
+"55
+[; ;keypad.c: 55:         {
 {
-"59
-[; ;keypad.c: 59:             rowloc=1;
+"56
+[; ;keypad.c: 56:             rowloc=1;
 [e = _rowloc -> -> 1 `i `uc ]
-"60
-[; ;keypad.c: 60:             while(temp_col!=0xf0)
+"57
+[; ;keypad.c: 57:             while(temp_col!=0xf0)
 [e $U 388  ]
 [e :U 389 ]
-"61
-[; ;keypad.c: 61:             {
+"58
+[; ;keypad.c: 58:             {
 {
-"62
-[; ;keypad.c: 62:                 temp_col = PORTB & 0xf0;
+"59
+[; ;keypad.c: 59:                 temp_col = PORTB & 0xf0;
 [e = _temp_col -> & -> _PORTB `i -> 240 `i `uc ]
-"63
-[; ;keypad.c: 63:             }
+"60
+[; ;keypad.c: 60:             }
 }
 [e :U 388 ]
-"60
-[; ;keypad.c: 60:             while(temp_col!=0xf0)
+"57
+[; ;keypad.c: 57:             while(temp_col!=0xf0)
 [e $ != -> _temp_col `i -> 240 `i 389  ]
 [e :U 390 ]
-"64
-[; ;keypad.c: 64:             break;
+"61
+[; ;keypad.c: 61:             break;
 [e $U 382  ]
-"65
-[; ;keypad.c: 65:         }
+"62
+[; ;keypad.c: 62:         }
 }
 [e :U 387 ]
-"67
-[; ;keypad.c: 67:         LATB = 0xfb;
+"64
+[; ;keypad.c: 64:         LATB = 0xfb;
 [e = _LATB -> -> 251 `i `uc ]
-"68
-[; ;keypad.c: 68:         col_loc = PORTB & 0xf0;
+"65
+[; ;keypad.c: 65:         col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"69
-[; ;keypad.c: 69:         temp_col=col_loc;
+"66
+[; ;keypad.c: 66:         temp_col=col_loc;
 [e = _temp_col _col_loc ]
-"70
-[; ;keypad.c: 70:         if(col_loc!=0xf0)
+"67
+[; ;keypad.c: 67:         if(col_loc!=0xf0)
 [e $ ! != -> _col_loc `i -> 240 `i 391  ]
-"71
-[; ;keypad.c: 71:         {
+"68
+[; ;keypad.c: 68:         {
 {
-"72
-[; ;keypad.c: 72:             rowloc=2;
+"69
+[; ;keypad.c: 69:             rowloc=2;
 [e = _rowloc -> -> 2 `i `uc ]
-"73
-[; ;keypad.c: 73:             while(temp_col!=0xf0)
+"70
+[; ;keypad.c: 70:             while(temp_col!=0xf0)
 [e $U 392  ]
 [e :U 393 ]
-"74
-[; ;keypad.c: 74:             {
+"71
+[; ;keypad.c: 71:             {
 {
-"75
-[; ;keypad.c: 75:                 temp_col = PORTB & 0xf0;
+"72
+[; ;keypad.c: 72:                 temp_col = PORTB & 0xf0;
 [e = _temp_col -> & -> _PORTB `i -> 240 `i `uc ]
-"76
-[; ;keypad.c: 76:             }
+"73
+[; ;keypad.c: 73:             }
 }
 [e :U 392 ]
-"73
-[; ;keypad.c: 73:             while(temp_col!=0xf0)
+"70
+[; ;keypad.c: 70:             while(temp_col!=0xf0)
 [e $ != -> _temp_col `i -> 240 `i 393  ]
 [e :U 394 ]
-"77
-[; ;keypad.c: 77:             break;
+"74
+[; ;keypad.c: 74:             break;
 [e $U 382  ]
-"78
-[; ;keypad.c: 78:         }
+"75
+[; ;keypad.c: 75:         }
 }
 [e :U 391 ]
-"80
-[; ;keypad.c: 80:         LATB = 0xf7;
+"77
+[; ;keypad.c: 77:         LATB = 0xf7;
 [e = _LATB -> -> 247 `i `uc ]
-"81
-[; ;keypad.c: 81:         col_loc = PORTB & 0xf0;
+"78
+[; ;keypad.c: 78:         col_loc = PORTB & 0xf0;
 [e = _col_loc -> & -> _PORTB `i -> 240 `i `uc ]
-"82
-[; ;keypad.c: 82:         temp_col=col_loc;
+"79
+[; ;keypad.c: 79:         temp_col=col_loc;
 [e = _temp_col _col_loc ]
-"83
-[; ;keypad.c: 83:         if(col_loc!=0xf0)
+"80
+[; ;keypad.c: 80:         if(col_loc!=0xf0)
 [e $ ! != -> _col_loc `i -> 240 `i 395  ]
-"84
-[; ;keypad.c: 84:         {
+"81
+[; ;keypad.c: 81:         {
 {
-"85
-[; ;keypad.c: 85:             rowloc=3;
+"82
+[; ;keypad.c: 82:             rowloc=3;
 [e = _rowloc -> -> 3 `i `uc ]
-"86
-[; ;keypad.c: 86:             while(temp_col!=0xf0)
+"83
+[; ;keypad.c: 83:             while(temp_col!=0xf0)
 [e $U 396  ]
 [e :U 397 ]
-"87
-[; ;keypad.c: 87:             {
+"84
+[; ;keypad.c: 84:             {
 {
-"88
-[; ;keypad.c: 88:                 temp_col = PORTB & 0xf0;
+"85
+[; ;keypad.c: 85:                 temp_col = PORTB & 0xf0;
 [e = _temp_col -> & -> _PORTB `i -> 240 `i `uc ]
-"89
-[; ;keypad.c: 89:             }
+"86
+[; ;keypad.c: 86:             }
 }
 [e :U 396 ]
-"86
-[; ;keypad.c: 86:             while(temp_col!=0xf0)
+"83
+[; ;keypad.c: 83:             while(temp_col!=0xf0)
 [e $ != -> _temp_col `i -> 240 `i 397  ]
 [e :U 398 ]
-"90
-[; ;keypad.c: 90:             break;
+"87
+[; ;keypad.c: 87:             break;
 [e $U 382  ]
-"91
-[; ;keypad.c: 91:         }
+"88
+[; ;keypad.c: 88:         }
 }
 [e :U 395 ]
-"93
-[; ;keypad.c: 93:     }
+"90
+[; ;keypad.c: 90:     }
 }
 [e :U 380 ]
 [e $U 381  ]
 [e :U 382 ]
-"97
-[; ;keypad.c: 97:     while(1)
+"94
+[; ;keypad.c: 94:     while(1)
 [e :U 400 ]
-"98
-[; ;keypad.c: 98:     {
+"95
+[; ;keypad.c: 95:     {
 {
-"100
-[; ;keypad.c: 100:         if(col_loc==0xe0)
+"97
+[; ;keypad.c: 97:         if(col_loc==0xe0)
 [e $ ! == -> _col_loc `i -> 224 `i 402  ]
-"101
-[; ;keypad.c: 101:         {
+"98
+[; ;keypad.c: 98:         {
 {
-"102
-[; ;keypad.c: 102:              return keypad[rowloc][0];
+"99
+[; ;keypad.c: 99:              return keypad[rowloc][0];
 [e ) *U + &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux `ui `ux ]
 [e $UE 367  ]
-"103
-[; ;keypad.c: 103:         }
+"100
+[; ;keypad.c: 100:         }
 }
 [e $U 403  ]
-"104
-[; ;keypad.c: 104:         else
+"101
+[; ;keypad.c: 101:         else
 [e :U 402 ]
-"105
-[; ;keypad.c: 105:             if(col_loc==0xd0)
+"102
+[; ;keypad.c: 102:             if(col_loc==0xd0)
 [e $ ! == -> _col_loc `i -> 208 `i 404  ]
-"106
-[; ;keypad.c: 106:         {
+"103
+[; ;keypad.c: 103:         {
 {
-"107
-[; ;keypad.c: 107:             return keypad[rowloc][1];
+"104
+[; ;keypad.c: 104:             return keypad[rowloc][1];
 [e ) *U + &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux `ui `ux ]
 [e $UE 367  ]
-"108
-[; ;keypad.c: 108:         }
+"105
+[; ;keypad.c: 105:         }
 }
 [e $U 405  ]
-"109
-[; ;keypad.c: 109:         else
+"106
+[; ;keypad.c: 106:         else
 [e :U 404 ]
-"110
-[; ;keypad.c: 110:             if(col_loc==0xb0)
+"107
+[; ;keypad.c: 107:             if(col_loc==0xb0)
 [e $ ! == -> _col_loc `i -> 176 `i 406  ]
-"111
-[; ;keypad.c: 111:         {
+"108
+[; ;keypad.c: 108:         {
 {
-"112
-[; ;keypad.c: 112:             return keypad[rowloc][2];
+"109
+[; ;keypad.c: 109:             return keypad[rowloc][2];
 [e ) *U + &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux `ui `ux ]
 [e $UE 367  ]
-"113
-[; ;keypad.c: 113:         }
+"110
+[; ;keypad.c: 110:         }
 }
 [e $U 407  ]
-"114
-[; ;keypad.c: 114:         else
+"111
+[; ;keypad.c: 111:         else
 [e :U 406 ]
-"116
-[; ;keypad.c: 116:         {
+"113
+[; ;keypad.c: 113:         {
 {
-"117
-[; ;keypad.c: 117:             return keypad[rowloc][3];
+"114
+[; ;keypad.c: 114:             return keypad[rowloc][3];
 [e ) *U + &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux * -> -> -> 3 `i `ui `ux -> -> # *U &U *U + &U _keypad * -> _rowloc `ux -> * -> # *U &U *U &U _keypad `ui -> -> 3 `i `ui `ux `ui `ux ]
 [e $UE 367  ]
-"118
-[; ;keypad.c: 118:         }
+"115
+[; ;keypad.c: 115:         }
 }
 [e :U 407 ]
 [e :U 405 ]
 [e :U 403 ]
-"119
-[; ;keypad.c: 119:     }
+"116
+[; ;keypad.c: 116:     }
 }
 [e :U 399 ]
 [e $U 400  ]
 [e :U 401 ]
-"121
-[; ;keypad.c: 121:     _delay((unsigned long)((300)*(8000000/4000.0)));
+"118
+[; ;keypad.c: 118:     _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"122
-[; ;keypad.c: 122: }
+"119
+[; ;keypad.c: 119: }
 [e :UE 367 ]
 }
